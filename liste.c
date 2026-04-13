@@ -33,7 +33,7 @@ lista crealista(int n ){
     for (int i = 0; i < n; i++)
     {
         struct elem* p = malloc(sizeof(struct elem*));
-        p->info = scanf("%d", p->info);
+        p->info = scanf("%d", p->info); //non legge, mi dice che manca il puntatore dopo la virgola 
         p->pun = NULL;
         t = insert_elem(t,p);
     }
