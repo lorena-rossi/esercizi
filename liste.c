@@ -33,16 +33,42 @@ lista crealista(int n ){
     for (int i = 0; i < n; i++)
     {
         struct elem* p = malloc(sizeof(struct elem*));
-        p->info = scanf("%d", p->info); //non legge, mi dice che manca il puntatore dopo la virgola 
+        p->info = scanf("%d", &p->info); //non legge, mi dice che manca il puntatore dopo la virgola 
         p->pun = NULL;
         t = insert_elem(t,p);
     }
     return t;
 };
 
-lista delete_elem(){};    
-void eliminalista(){};
+lista delete_elem( lista l, struct elem* e ){
+
+    if (l == e)
+    {
+        l = tail(l);
+    }
+    else
+    {
+        lista l1=l;
+        while (tail(l1) != e)
+        {
+            l1=tail(l1);
+        }
+        l1->pun = tail(e);        
+    }
+    free(e);
+    return l;
+};
+
+void cancellalista(lista &testa){
+    while (testa != NULL)
+    {
+        testa=delete_elem(testa,testa);
+    }
+    
+};
+
 struct elem* serarc(){};
+
 int conta(){};
 lista cancella(lista l , int v){ }; //trovo elemento e poi lo cancello, sarebbe da ottimizzare per casa 
 lista copy(){};
