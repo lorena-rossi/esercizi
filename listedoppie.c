@@ -10,7 +10,7 @@ struct elem
 };
 typedef struct elem* lista; 
 
-int head (lista m){ return m->info;};
+char head (lista m){ return m->info;};
 
 lista tail (lista m){ return m->pun; };
 
