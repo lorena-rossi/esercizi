@@ -7,7 +7,6 @@ using namespace std ;
 #include "liste-tipo.h"
 #include "liste.h"
 
-
 int compare(char* s1,char* s2){
 	return strcmp(s1,s2);
 }

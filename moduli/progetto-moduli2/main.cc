@@ -1,9 +1,10 @@
 #include <iostream>
 #include <cstring>
-#include "liste-tipo.h"
-#include "fun-app.h"
 
 using namespace std ;
+
+#include "liste-tipo.h"
+#include "fun-app.h"clear
 
 int main()
 {

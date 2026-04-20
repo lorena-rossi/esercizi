@@ -3,8 +3,8 @@
 
 using namespace std ;
 
+#include"liste-tipo.h"
 #include "liste.h"
-#include "liste-tipo.h"
 
 lista tail(lista p){return p->pun;}
 lista prev(lista p){return p->prev;}
