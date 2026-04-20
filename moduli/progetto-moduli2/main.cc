@@ -4,7 +4,7 @@
 using namespace std ;
 
 #include "liste-tipo.h"
-#include "fun-app.h"clear
+#include "fun-app.h"
 
 int main()
 {
