@@ -6,6 +6,7 @@ using namespace std ;
 #include "tipo.h"
 #include "liste.h"
 
+tipo_inf head(lista p){return p->inf;};
 lista tail(lista p){return p->pun;}
 lista prev(lista p){return p->prev;}
 
@@ -29,7 +30,7 @@ lista delete_elem(lista l, elem* e){
 		return l;
 }
 
-elem* search(lista l, tipo_inf* v){
+elem* search(lista l, tipo_inf v){
 	while(l!=NULL)
 		if(strcmp(head(l),v)==0)
 			return l;
@@ -38,10 +39,11 @@ elem* search(lista l, tipo_inf* v){
 	return NULL;
 }
 	
-elem* new_elem(tipo_inf* inf){
+elem* new_elem(tipo_inf inf){
 	    elem* p = new elem ;
 	    strcpy(p->inf,inf);
 	    p->pun=p->prev=NULL;
 		return p;
 }
+
 
