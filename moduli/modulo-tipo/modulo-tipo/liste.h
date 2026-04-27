@@ -13,7 +13,6 @@ lista tail(lista);
 
 elem* new_elem(tipo_inf );
 elem* search(lista, tipo_inf* );
-int compare(tipo_inf* ,tipo_inf* );
 
 lista tail(lista);
 lista prev(lista);
