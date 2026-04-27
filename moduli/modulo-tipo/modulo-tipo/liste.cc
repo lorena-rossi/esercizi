@@ -28,3 +28,20 @@ lista delete_elem(lista l, elem* e){
 		delete e;
 		return l;
 }
+
+elem* search(lista l, tipo_inf* v){
+	while(l!=NULL)
+		if(strcmp(head(l),v)==0)
+			return l;
+		else
+			l=tail(l);
+	return NULL;
+}
+	
+elem* new_elem(tipo_inf* inf){
+	    elem* p = new elem ;
+	    strcpy(p->inf,inf);
+	    p->pun=p->prev=NULL;
+		return p;
+}
+
