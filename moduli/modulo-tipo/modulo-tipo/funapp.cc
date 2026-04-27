@@ -19,7 +19,7 @@ void stampalista(lista p)
 }
 
 
-lista crealista(int n)
+lista crealista(int n) //vedere se così regge cambiando char in int, secondo me no 
 {
 	char url[80];
       lista testa = NULL ;
