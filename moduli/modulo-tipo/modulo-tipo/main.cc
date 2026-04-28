@@ -9,6 +9,13 @@ Forse melgio usare direttamente char.
 
 using namespace std ;
 
+//prova con macro per controllo dell'inclusione, da riproporre per tutti header file 
+/*#ifndef _MODULO__H
+#DEFINE _MODULO_TIPO_H 
+	#include "tipo.h"
+#endif
+*/
+
 #include "tipo.h"
 #include "liste.h"
 #include "fun-app.h"

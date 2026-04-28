@@ -3,8 +3,8 @@
 
 using namespace std ;
 
-#include "tipo.h"
-#include "liste"
+
+#include "liste-tipo"
 #include "fun-app.h"
 
 //prova con macro per controllo dell'inclusione, da riproporre per tutti header file 
