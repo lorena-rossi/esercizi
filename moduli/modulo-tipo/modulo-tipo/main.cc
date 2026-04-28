@@ -1,3 +1,9 @@
+/* ma se uso come tipo char* 
+poi devo far comparire da qualche parte il char a cui si riferisce il puntatore
+Forse melgio usare direttamente char.
+*/
+
+
 #include <iostream>
 #include <cstring>
 
