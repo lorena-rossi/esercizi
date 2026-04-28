@@ -7,8 +7,7 @@ using namespace std ;
 #include "liste.h"
 #include "fun-app.h"
 
-void stampalista(lista p)
-{
+void stampalista(lista p){
 	cout<<"[";
 	while (p != NULL) {
 		cout<<head(p)<<" " ; // stampa valore
