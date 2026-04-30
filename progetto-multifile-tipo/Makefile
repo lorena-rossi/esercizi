@@ -1,14 +1,18 @@
-Web-list: main.o fun-app.o liste.o tipo.o
-	g++ -o Web-list main.o fun-app.o liste.o tipo.o
-	
-main.o: main.cc tipo.h liste.h fun-app.h
-	g++ -c main.cc
+OBJ= main.o fun-app.o liste.o tipo.o 
 
-fun-app.o: fun-app.cc tipo.h liste.h fun-app.h
-	g++ -c fun-app.cc
+Web-list: $(OBJ)
+	g++ -o Web-list $(OBJ)
 
-liste.o: liste.cc tipo.h liste.h
-	g++ -c liste.cc
+main.o: tipo.h liste.h fun-app.h
 
-tipo.o: tipo.cc tipo.h 	
-	g++ -c tipo.cc
+fun-app.o: tipo.h liste.h fun-app.h
+
+liste.o: tipo.h liste.h
+
+tipo.o: tipo.h 	
+
+.PHONY: clean cleanall
+clean:
+	rm -f*.o
+cleanall:
+	rm -f Web-list *.o
