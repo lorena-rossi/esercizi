@@ -1,14 +1,14 @@
 
 struct elem
 {
-       tipo_inf inf[51] ;
+       tipo_inf inf;
        elem* pun ;
        elem* prev;
 } ;
 
 typedef elem* lista ;
 
-tipo_inf* head(lista);
+tipo_inf head(lista);
 lista tail(lista);
 lista prev(lista );
 

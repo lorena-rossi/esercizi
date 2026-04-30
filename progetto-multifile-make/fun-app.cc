@@ -1,16 +1,21 @@
+
 #include <iostream>
 #include <cstring>
 
 using namespace std ;
 
+
 #include "tipo.h"
 #include "liste.h"
 #include "fun-app.h"
 
-void stampalista(lista p){
+
+void stampalista(lista p)
+{
 	cout<<"[";
 	while (p != NULL) {
-		cout<<head(p)<<" " ; // stampa valore
+		print(head(p)); // stampa valore
+		cout<<" ";
 		p = tail(p);     // spostamento sul
 			                  // prossimo elemento
 	}
@@ -18,7 +23,7 @@ void stampalista(lista p){
 }
 
 
-lista crealista(int n) //vedere se così regge cambiando char in int, secondo me no 
+lista crealista(int n, bool ord)
 {
 	char url[80];
       lista testa = NULL ;
@@ -26,15 +31,20 @@ lista crealista(int n) //vedere se così regge cambiando char in int, secondo me
           cout<<"URL "<<i<<": " ;
           cin>>url;
 		  elem* p = new_elem(url);
-          testa=insert_elem(testa,p);
+          if(ord)
+        	  	  testa=ord_insert_elem(testa,p);
+          else
+        	  	  testa=insert_elem(testa,p);
       }
       return testa ;
 }
 
-lista cancella(lista l, tipo_inf* v){
+lista cancella(lista l, tipo_inf v){
 	elem* e;
 	while((e=search(l,v))!=NULL){
-		cout<<"Cancello un elemento con valore "<<v<<endl;
+		cout<<"Cancello un elemento con valore ";
+		print(v);
+		cout<<endl;
 		l=delete_elem(l,e);}
 	cout<<"Fine cancellazione!!"<<endl;
 	return l;
@@ -47,11 +57,14 @@ void naviga(elem* e){
 		cout<< "Cosa vuoi fare (B per backward,F per forward, S per stop)"<<endl;
 		cin>>scelta;
 	    if(scelta=='F' && tail(e)!=NULL){
-	    			cout<<head(tail(e))<<endl;
+	    			print(head(tail(e)));
+					cout<<endl;
 	    			e=tail(e);}
 	    else
 	    		if(scelta=='B' && prev(e) !=NULL){
-	    			cout<<head(prev(e))<<endl;
+	    			print(head(tail(e)));
+					cout<<endl;
 	    			e=prev(e);}
 	    		else cout<<"Elemento non esistente!!"<<endl;}		while(scelta!='S');
 }
+
