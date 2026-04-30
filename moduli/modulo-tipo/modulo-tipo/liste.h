@@ -8,7 +8,7 @@ struct elem
 
 typedef elem* lista ;
 
-tipo_inf head(lista);
+tipo_inf* head(lista);
 lista tail(lista);
 lista prev(lista );
 
