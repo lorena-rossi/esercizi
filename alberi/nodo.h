@@ -1,9 +1,11 @@
 
-typedef struct nodo{
+struct nodo{
     tipo_inf inf;
-    node* parent;
+    struct node* parent;
     node* firstchild;
     node* nextsibling;
 } tree;
  
+typedef struct nodo* tree;
+
 //tree root;
