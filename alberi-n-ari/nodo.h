@@ -16,4 +16,4 @@ node* new_node(tipo_inf);
 
 void insert_child( tree , tree );
 
-void inser_sibling( node* , tree );
+void insert_sibling( node* , tree );

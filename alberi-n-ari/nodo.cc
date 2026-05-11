@@ -37,7 +37,7 @@ void insert_child( tree p, tree c){
 }
 
 //il nodo diventa il fratello nell'albero t 
-void inser_sibling( node* n, tree t){
+void insert_sibling( node* n, tree t){
     t->nextsibling = n->nextsibling;
     t->parent = n->parent;
     n->nextsibling= t;
