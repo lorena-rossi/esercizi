@@ -22,10 +22,10 @@ node* get_parent(node* n){
     return n->parent;
 };
 
-node* new_node( tipo_inf i){
+node* new_node(tipo_inf r){
     node* n = new node;
-    n->inf = i;
-    n-> firstchild = n->nextsibling=NULL;
+    n->inf = r;
+    n-> firstchild = n->nextsibling=n->parent=NULL;
     return n;
 }
 
