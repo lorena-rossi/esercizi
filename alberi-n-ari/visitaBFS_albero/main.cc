@@ -42,13 +42,18 @@ int altezza(tree t){
 
 int dimensione (tree t){
     int i =0;
-    codaBFS* c= new_elem(t);
+    codaBFS c= newQueue();
     c = enqueue(c,t);
-    while (c != NULL)
+    while (! isEmpty(c))
     {
-        n = dequeue(c);
+        node* n = dequeue(c); // perché nuovo nodo ? 
         i+=1;
-        enqueue(t1); // visita tutti i figli di t 
+        tree t1 = get_firstchild(t);
+        while (t1 != NULL)
+        {
+            c=enqueue(c,t1);
+            t1=get_nextsibiling(t1);
+        }
     }
     return i;
 };
