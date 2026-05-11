@@ -50,7 +50,8 @@ int main(){
     cout<<"padre di marco e paolo è"<<get_info(get_parent(get_firstchild(t))) <<endl;
 #endif
     n=new_node("Lucia");
-    insert_child( t->firstchild->nextsibling, n ); 
+    insert_child(get_nextsibiling(get_firstchild(t)) , n);
+    //insert_child( t->firstchild->nextsibling, n );  
     //potevo usare get... oppure no ?? 
 
     node* m = new_node("Anna");
