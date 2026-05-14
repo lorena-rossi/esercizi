@@ -1,9 +1,11 @@
 #include <cstring>
 #include <iostream> 
+#include "tipo.h"
+
 
 using namespace std;
 
-#include "tipo.h"
+
 
 
 int compare(tipo_inf s1,tipo_inf s2){
