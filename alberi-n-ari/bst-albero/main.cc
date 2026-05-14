@@ -18,6 +18,38 @@ void print_BST(bnode* n){
         
 };
 
+bnode* bst_delete(bst& t, bnode* c){
+    //bisogna inserire il caso in cui c non sia contenuto in t, ma mi serve la funzione search
+    //caso folgia 
+    if (c == NULL)
+    {
+        get_parent(c) = NULL;
+        //devo capire come mettere null sul nodo precendete a c
+        delete c;
+        return t;
+    }
+    //caso un figlio
+    if (get_left(c)!= NULL || get_right(c)!=NULL)
+    {
+        if (get_left(c)==NULL)
+        {
+            get_parent(c)=get_right(c);
+        }
+        get_parent(c)=get_left(c);
+        delete c;
+        return t;
+    }
+    //caso con 2 figli
+
+    //ricerco il maggiore dei sui predecessori 
+    while (c != NULL)
+    {
+        c=get_left(c);
+    }
+    t=c;
+    delete c; 
+    return t;
+};
 
 int main(){
     
