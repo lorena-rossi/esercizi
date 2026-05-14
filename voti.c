@@ -7,7 +7,7 @@ void stampavoti( unsigned N_COLS, float m [][N_COLS], unsigned size ){
     {
         for (int j = 0; j < N_COLS ; j++)
         {
-            printf("il voto in colonna %d e riga %d è = %f" , j , i , m[i][j]);
+            printf("il voto in colonna %d e riga %d è = %f \n" , j , i , m[i][j]);
         }
         //printf("/n"); per andare a capo finita una riga 
     }
