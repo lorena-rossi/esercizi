@@ -23,8 +23,9 @@ bnode* bst_delete(bst& t, bnode* c){
     //caso folgia 
     if (c == NULL)
     {
-        get_parent(c) = NULL;
+        (c->parent)->left = NULL;
         //devo capire come mettere null sul nodo precendete a c
+        //come so quale in quale figlio mho tolto la folgia ?? se a sinistra o destra ? 
         delete c;
         return t;
     }
@@ -33,9 +34,9 @@ bnode* bst_delete(bst& t, bnode* c){
     {
         if (get_left(c)==NULL)
         {
-            get_parent(c)=get_right(c);
+            c->parent=get_right(c);
         }
-        get_parent(c)=get_left(c);
+        c->parent=get_left(c);
         delete c;
         return t;
     }
