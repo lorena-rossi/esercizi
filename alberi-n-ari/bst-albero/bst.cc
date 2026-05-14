@@ -50,3 +50,7 @@ bnode* bst_insert(bst& a, bnode* n){
     }
     
 };
+
+void print_key(bnode* n){
+    cout<<"chiave : %d"<< n->key <<endl;
+};
