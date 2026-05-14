@@ -34,8 +34,8 @@ bnode* get_parent(bnode* n){
     return n->parent;
 };
 
-bnode* bst_insert(bst& a, bnode* n){
-    //da rifare così non funziona 
+bnode* bst_insert(bst& b, bnode* n){
+    /*da rifare così non funziona 
     while (a != NULL)
     {
         if (get_key(a)< get_key(n))//devi usare compare_key 
@@ -47,7 +47,17 @@ bnode* bst_insert(bst& a, bnode* n){
             bst_insert(a,get_right(n));
             //get_right(n)= a;
         //questa cosa non funziona perché non vede quando la foglia è vuota
+    }*/
+    if (b==NULL)
+    {
+        b=n; 
+        return;
     }
+    if ( compare_key( get_key(b), get_key(n) ) < 0 )
+    {
+        get_left(b)
+    }
+    
     
 };
 

@@ -1,3 +1,5 @@
+#include "tipo.h"
+
 struct node{
     tipo_inf inf;
     node* parent;
