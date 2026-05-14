@@ -10,6 +10,7 @@ void print_BST(bnode* n){
         print_BST( get_left(n) );
     }
     print_key(n);
+    cout<<" ";
     if (get_right(n) != NULL)
     {
         print_BST( get_right(n) );
@@ -37,6 +38,4 @@ int main(){
     }
     
     print_BST(t);
-
-    return 1;
 }
