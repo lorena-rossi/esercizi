@@ -18,39 +18,6 @@ void print_BST(bnode* n){
         
 };
 
-bnode* bst_delete(bst& t, bnode* c){
-    //bisogna inserire il caso in cui c non sia contenuto in t, ma mi serve la funzione search
-    //caso folgia 
-    if (c == NULL)
-    {
-        (c->parent)->left = NULL;
-        //devo capire come mettere null sul nodo precendete a c
-        //come so quale in quale figlio mho tolto la folgia ?? se a sinistra o destra ? 
-        delete c;
-        return t;
-    }
-    //caso un figlio
-    if (get_left(c)!= NULL || get_right(c)!=NULL)
-    {
-        if (get_left(c)==NULL)
-        {
-            c->parent=get_right(c);
-        }
-        c->parent=get_left(c);
-        delete c;
-        return t;
-    }
-    //caso con 2 figli
-
-    //ricerco il maggiore dei sui predecessori 
-    while (c != NULL)
-    {
-        c=get_left(c);
-    }
-    t=c;
-    delete c; 
-    return t;
-};
 
 int main(){
     
@@ -116,7 +83,7 @@ int main(){
             cout<< "Dimmi la chiave del nodo che vuoi cancellare\n";
             cin>>k;
             b = bst_new_node(k, get_value(bst_search(t,k)));
-            t = bst_delete(t,b);
+            bst_delete(t,b);
             break;
         
         case 6:

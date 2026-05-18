@@ -35,6 +35,7 @@ bnode* get_parent(bnode* n){
 };
 
 bnode* bst_insert(bst& b, bnode* n){
+    //posso fare anche con while
     if (b==NULL)
     {
         b=n; 
@@ -67,6 +68,8 @@ bnode* bst_insert(bst& b, bnode* n){
 };
 
 bnode* bst_search(bst bt, tipo_key k){
+
+    //potevo farla anche con il while, e magari togliendo qualche if
     if (get_key(bt) == k)
     {
         return bt;
@@ -92,7 +95,39 @@ bnode* bst_search(bst bt, tipo_key k){
         {
            return bt;
         }
-    }    
+    }
+    return NULL;    
+};
+
+void bst_delete(bst& t, bnode* c){
+    //bisogna inserire il caso in cui c non sia contenuto in t, ma mi serve la funzione search
+    //caso folgia 
+    if (c == NULL)
+    {
+        (c->parent)->left = NULL;
+        //devo capire come mettere null sul nodo precendete a c
+        //come so quale in quale figlio mho tolto la folgia ?? se a sinistra o destra ? 
+        delete c;
+    }
+    //caso un figlio
+    if (get_left(c)!= NULL || get_right(c)!=NULL)
+    {
+        if (get_left(c)==NULL)
+        {
+            c->parent=get_right(c);
+        }
+        c->parent=get_left(c);
+        delete c;
+    }
+    //caso con 2 figli
+
+    //ricerco il maggiore dei sui predecessori 
+    while (c != NULL)
+    {
+        c=get_left(c);
+    }
+    t=c;
+    delete c;
 };
 
 void print_key(bnode* n){
