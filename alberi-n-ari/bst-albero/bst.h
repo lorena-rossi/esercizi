@@ -16,4 +16,5 @@ bnode* get_parent(bnode*);
 
 bnode* bst_new_node(tipo_key, tipo_inf);
 bnode* bst_insert(bst& , bnode*);
+bnode* bst_search(bst , tipo_key);
 void print_key(bnode*);

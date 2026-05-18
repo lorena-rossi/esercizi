@@ -63,9 +63,36 @@ bnode* bst_insert(bst& b, bnode* n){
             b->right=n; 
             n->parent=b;
         } 
+    }    
+};
+
+bnode* bst_search(bst bt, tipo_key k){
+    if (get_key(bt) == k)
+    {
+        return bt;
     }
-    
-    
+    if ( compare_key( get_key(bt), k) < 0 )
+    {
+        if ( get_right(bt) != NULL )
+        {
+            bst_search( get_left(bt), k);
+        } 
+        else
+        {
+            return bt;
+        }
+    }
+    if (compare_key( get_key(bt),k ) > 0)
+    {
+        if (get_right(bt) != NULL)
+        {
+            bst_search(get_right(bt),k);
+        }
+        else
+        {
+           return bt;
+        }
+    }    
 };
 
 void print_key(bnode* n){
