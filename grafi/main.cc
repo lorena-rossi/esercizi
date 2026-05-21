@@ -61,5 +61,22 @@ bool connected(graph g){
 
 int main(int argc, char* argv[]){
 
-    return 1;
+    /* serve per stampare argomenti
+    argc è totale degli alrogmenti, ovvero la dimensione che avrà argv
+    argv comtine ein nome degli argomenti passati     
+    for (int i = 0; i < argc; i++)
+    {
+        cout<< argv[i]<<endl;
+    }*/
+
+    //prima non devo chiedere di inserie i nomi poi se non sonosufficienti fare un controlllo
+    if (argc < 3)
+    {
+        cout<<"mi servono altri nomi da passare al programma : "<< argv[1]<<endl;
+        exit(0); //a cosa serve ?? 
+    }
+    
+
+
+    return 0;
 }
