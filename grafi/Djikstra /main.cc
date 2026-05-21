@@ -7,6 +7,9 @@
 
 using namespace std;
 
+float *dest;
+int *parent;
+
 void add(graph& g, int u, int v, float w, bool d) {
         if (d)
                 add_arc(g,u,v,w);
@@ -32,13 +35,24 @@ graph g_build(ifstream &g, bool d, bool w) {
   return G;
 }
 
-void metodoDjikstra(graph g, float w, adj_list s){
-    inizialize(g,s);
-    
+
+void inizialize(graph g, int s){
+    for (int i = 0; i < g.dim; i++)
+    {
+        dest[i] = FLT_MAX;
+        parent[i]= NULL;
+    }
+    dest[s-1]=0;
 };
 
-void inizialize(graph g, adj_list s){
-    //array dinamici per parent e per dest 
+
+void Relax(int u, int v, float w){
+    if (dest[u] > dest[v] + w )
+    {
+        dest[u]= dest[v] + w;
+        parent[v] = u +1;
+    }
+    
 };
 
 int main(int argc,char *argv[]) {
