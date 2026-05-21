@@ -46,7 +46,7 @@ void add_arc(graph& g , int s, int d, float w){
 };
 
 void add_edge(graph& g, int s, int d, float w){
-    add_arc(g, s,d,w);
+    add_arc(g,s,d,w);
     add_arc(g,d,s,w);
 };
 
