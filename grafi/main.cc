@@ -8,7 +8,44 @@ using namespace std;
 
 graph g_build( ifstream &g, bool d, bool w){
     // legge da g nuemero di nodi(prima riga) archi da aggiungere sono righe successive 
-    // se w è true allora ha i pesi, se d serve per capire se è orientato
+    // se w è true allora ha i pesi, se d è true allora è orientato
+    int d=0,p,a;
+    g >> d;
+    graph G = new_graph(d);
+    if (w)
+    {
+        float w=0;
+        if (d)
+        {
+            while (g >> p >> a >> w)
+            {
+               add_arc(G, p, a, w); 
+            }
+        }else
+        {
+             while (g >> p >> a >> w)
+            {
+               add_edge(G, p, a, w); 
+            }
+        }  
+    }
+    else
+    {
+        if (d)
+        {
+            while (g >> p >> a)
+            {
+               add_arc(G, p, a, 1.0); 
+            }
+        }else
+        {
+             while (g >> p >> a)
+            {
+               add_edge(G, p, a, 1.0); 
+            }
+        } 
+    }
+    
     
 };
 
