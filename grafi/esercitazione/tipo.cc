@@ -1,4 +1,6 @@
+#include "tipo.h"
 
+#include <string.h>
+#include <iostream>
+using namespace std;
 
-
-void get_id(sensore , char*){}; 
