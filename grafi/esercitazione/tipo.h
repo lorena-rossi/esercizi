@@ -9,14 +9,14 @@ typedef struct sensore
     float soglia;
 };
 
-void get_id(sensore , char*){};
-void get_tipo(sensore , char*){};
-float get_soglia(sensore ){};
+void get_id(sensore , char*);
+void get_tipo(sensore , char*);
+float get_soglia(sensore );
 
-void stampa(sensore){ };
+void stampa(sensore);
 
-int compare(sensore, sensore){};
+int compare(sensore, sensore);
 
-void inizia(sensore, float, char, char){ };
+void inizia(sensore, float, char, char);
 
 #endif
