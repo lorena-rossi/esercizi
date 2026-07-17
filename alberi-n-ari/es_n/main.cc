@@ -1,6 +1,7 @@
 
 #define DEBUG
 
+#include <string.h>
 #include <iostream>
 using namespace std;
 
@@ -20,9 +21,9 @@ void print_BST(bst b){
 }
 
 int nuovo_albero(const char* file_nna, bst& t){
-	bnode *b = NULL;
 	int k;
 	tipo_inf f;
+
 	FILE *fp = fopen(file_nna, "r");
 	if (fp == NULL)
 	{
@@ -30,10 +31,12 @@ int nuovo_albero(const char* file_nna, bst& t){
 		return -1;
 	}
 	
-	while ( fscanf(fp, "%d" "%s" "%f", &k, f.modello, &(f.carico) ) != EOF)
+	char buffer[100];
+	while ( fscanf(fp, "%d" "%s" "%f", &k, buffer, &(f.carico) ) != EOF)
 	{
-		b=bst_newNode(k,f);
-		bst_insert(t,b);
+		f.modello = (char *) malloc( sizeof(strlen(buffer) + 1) );
+		strcpy(f.modello, buffer);
+		bst_insert(t,bst_newNode(k,f));
 	}
 	
 	
