@@ -1,0 +1,4 @@
+PR001 Tastiera_Meccanica 89.90 15
+PR002 Mouse_Wireless 45.50 30
+PR003 Monitor_4K 349.99 8
+PR004 Cuffie_Noise_Cancelling 120.00 12

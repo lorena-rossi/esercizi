@@ -22,3 +22,4 @@ tipo_inf head(lista);
 elem* new_elem(tipo_inf);
 elem* search(lista, tipo_inf);
 
+#endif
