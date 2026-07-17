@@ -14,7 +14,7 @@ void get_tipo(sensore m , char* app){
 
 float get_soglia(sensore m ){ return m.soglia; };
 
-void stampa(sensore m){ 
+void stampas(sensore m){ 
     cout<<"sensore "<<m.id;
     cout<<" di tipo " << m.tipo;
     cout<<" con solgia "<<m.soglia<<endl;

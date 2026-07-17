@@ -4,8 +4,8 @@
 
 typedef struct sensore
 {
-    char id[7];
-    char tipo[20];
+    char id[20];
+    char tipo[30];
     float soglia;
 };
 
@@ -13,7 +13,7 @@ void get_id(sensore , char*);
 void get_tipo(sensore , char*);
 float get_soglia(sensore );
 
-void stampa(sensore);
+void stampas(sensore);
 
 int compare(sensore, sensore);
 

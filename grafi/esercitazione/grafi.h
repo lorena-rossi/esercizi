@@ -1,6 +1,8 @@
 #ifndef GRAFI_H
 #define GRAFI_H
 
+#include "tipo.h"
+
 struct adj_node
 {
     int node;
@@ -13,12 +15,14 @@ typedef adj_node* adj_list;
 
 typedef struct {
     adj_list* nodes;
+    sensore* dato;
     int dim;
 }graph;
 
 
 int get_dim(graph);
 adj_list get_adjlist(graph, int);
+sensore get_dato (graph ,int);
 
 int get_adjnode(adj_node*);
 adj_list get_nextadj( adj_list);
