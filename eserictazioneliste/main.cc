@@ -1,7 +1,8 @@
 #include "tipo.h"
 #include "liste.h"
 
-#include<iostream>
+#include <string.h>
+#include <iostream>
 using namespace std;
 
 void stampaB(lista t){
@@ -24,11 +25,31 @@ void stampaB(lista t){
     
 }
 
+elem* crecaProdotto( lista t, char* s){
+    while ( t != NULL)
+    {
+        if ( strcmp(t->inf.codice, s) == 0)
+        {
+            return t;
+        }
+        t=tail(t);
+        
+    }
+    return NULL;
+}
 
+void dealloca( lista& t){
+    while ( t != NULL )
+    {
+        t= delete_elem(t,t);
+    }
+    t=NULL;
+}
 
 int main(){
 
     lista testa=NULL;
+    elem* e = NULL;
     tipo_inf l;
 
     FILE *fp = fopen( "prodotti.txt" , "r");
@@ -45,6 +66,20 @@ int main(){
     fclose(fp);
 
     stampaB(testa);
+    char s[] = "PR003";
+    e=crecaProdotto(testa,s);
+    if (e != NULL)
+    {
+        print(e->inf);
+    }
+    else
+    {
+        cout<<"prodotto non trovato"<<endl;
+    }
     
+    
+    
+
+    dealloca(testa);
     return 1;
 } 
