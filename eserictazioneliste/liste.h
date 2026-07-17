@@ -1,4 +1,7 @@
 
+#ifndef LISTE_H
+#define LISTE_H
+
 #include "tipo.h"
 
 struct elem

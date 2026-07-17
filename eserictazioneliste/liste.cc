@@ -1,3 +1,5 @@
+
+
 #include <iostream>
 #include <cstring>
 
@@ -6,12 +8,6 @@ using namespace std ;
 
 #include "tipo.h"
 #include "liste.h"
-
-
-
-/*******************************/
-/* DEFINIZIONE MODULO "liste" */
-/*******************************/
 
 tipo_inf head(lista p){return p->inf;}
 
