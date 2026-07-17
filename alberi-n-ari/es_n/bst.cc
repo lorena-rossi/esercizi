@@ -1,9 +1,4 @@
-/*
- * tree.cc
- *
- *  Created on: 14 mag 2018
- *      Author: federica
- */
+
 #include <iostream>
 using namespace std;
 
@@ -24,6 +19,7 @@ static tipo_key compare_key(tipo_key s,tipo_key s1){
 void print_key(tipo_key k){
 	cout<<k;
 }
+
 tipo_key get_key(bnode* n){
 	return (n->key);
 }
