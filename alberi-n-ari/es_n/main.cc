@@ -20,6 +20,28 @@ void print_BST(bst b){
 
 }
 
+void stampa_ricorsiva(bst b, int livello, string etichetta)
+{
+    if (b == NULL) return;   
+
+    // stampa livello*4 spazi prima del nodo
+    for (int i = 0; i < livello * 4; i++)
+        cout << " ";
+
+    cout << "[" << etichetta << "] ID: " << get_key(b);
+    cout << " - Modello: " << get_modello(get_value(b));
+    cout << " - Carico: " << get_carico(get_value(b)) << "%" << endl;
+
+    stampa_ricorsiva(get_left(b),  livello + 1, "sx");
+    stampa_ricorsiva(get_right(b), livello + 1, "dx");
+}
+
+void stampa_albero(bst & b)
+{
+    stampa_ricorsiva(b, 0, "radice");
+}
+
+
 int nuovo_albero(const char* file_nna, bst& t){
 	int k;
 	tipo_inf f;
@@ -34,7 +56,7 @@ int nuovo_albero(const char* file_nna, bst& t){
 	char buffer[100];
 	while ( fscanf(fp, "%d" "%s" "%f", &k, buffer, &(f.carico) ) != EOF)
 	{
-		f.modello = (char *) malloc( strlen(buffer) + 1 );
+		//f.modello = (char *) malloc( strlen(buffer) + 1 );
 		f.modello= buffer;
 		bst_insert(t,bst_newNode(k,f));
 	}
@@ -43,8 +65,15 @@ int nuovo_albero(const char* file_nna, bst& t){
 	return 0;
 }
 
+void analizzaIN(bnode * radice, float soglia_critica){
+	//report A dispositivi minori stampati con id in ordine decrescente
+
+	//resport B dispositivi con carico maggiore o uguale livello per livello BFS iterativa
+}
+
+
 int main(){
-	bst b;
+	bst b=NULL;
 	if (nuovo_albero("dispositivi.txt", b) == 0)
 	{
 		cout<<"albero fatto!"<<endl;
@@ -53,7 +82,9 @@ int main(){
 	{
 		cout<<"hai fallito"<<endl;
 	}
-	
+	print_BST(b);
+
+	stampa_albero(b);
 
 	
 	return 0;
