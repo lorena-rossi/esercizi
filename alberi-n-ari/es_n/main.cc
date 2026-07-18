@@ -65,10 +65,34 @@ int nuovo_albero(const char* file_nna, bst& t){
 	return 0;
 }
 
-void analizzaIN(bnode * radice, float soglia_critica){
+void analizzaIN(bst radice, float soglia_critica){
 	//report A dispositivi minori stampati con id in ordine decrescente
+	bst t = NULL;
+	t = cerca_solgia(radice,soglia_critica);
+	//idea, salvare tutti Id sotto albero left in un char
+	//poi lavorare con il char per il confronto
+	//problema è che andare sempre verso sx e basta salto degli Id minori
 
 	//resport B dispositivi con carico maggiore o uguale livello per livello BFS iterativa
+}
+
+bnode* cerca_solgia(bst b, float s){
+	while (b != NULL)
+	{
+		if ( get_carico(get_value(b)) == s )
+		{
+			return b;
+		}
+		if ( get_carico(get_value(b)) < s )
+		{
+			b = get_right(b);
+		} else
+		{
+			b=get_left(b);
+		}
+
+	}
+	return NULL;
 }
 
 
@@ -82,7 +106,7 @@ int main(){
 	{
 		cout<<"hai fallito"<<endl;
 	}
-	print_BST(b);
+	
 
 	stampa_albero(b);
 
