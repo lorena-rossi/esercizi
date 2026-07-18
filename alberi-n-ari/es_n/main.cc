@@ -72,6 +72,9 @@ void analizzaIN(bst radice, float soglia_critica){
 	//idea, salvare tutti Id sotto albero left in un char
 	//poi lavorare con il char per il confronto
 	//problema è che andare sempre verso sx e basta salto degli Id minori
+	// oppure salvo id di quelli di sinistra e poi confronto con quelli di destra e uso search
+	
+
 
 	//resport B dispositivi con carico maggiore o uguale livello per livello BFS iterativa
 }
