@@ -1,0 +1,7 @@
+45 Cisco-Catalyst-9300 42.5
+22 Juniper-EX4300 78.1
+12 HP-Aruba-2930F 15.4
+38 Edgecore-AS7326 91.2
+77 Nokia-7750-SR 61.8
+60 Extreme-X465 33.9
+95 Huawei-CloudEngine 88.3

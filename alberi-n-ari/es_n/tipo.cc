@@ -18,6 +18,7 @@ int compare(tipo_inf s1,tipo_inf s2){
 }
 
 void copy(tipo_inf& dest, tipo_inf source){
+	dest.modello = (char*) malloc(strlen(source.modello) + 1); 
 	stpcpy(dest.modello, source.modello);
 	dest.carico=source.carico;
 }

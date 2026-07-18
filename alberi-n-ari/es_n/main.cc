@@ -1,5 +1,5 @@
 
-#define DEBUG
+
 
 #include <string.h>
 #include <iostream>
@@ -34,12 +34,11 @@ int nuovo_albero(const char* file_nna, bst& t){
 	char buffer[100];
 	while ( fscanf(fp, "%d" "%s" "%f", &k, buffer, &(f.carico) ) != EOF)
 	{
-		f.modello = (char *) malloc( sizeof(strlen(buffer) + 1) );
-		strcpy(f.modello, buffer);
+		f.modello = (char *) malloc( strlen(buffer) + 1 );
+		f.modello= buffer;
 		bst_insert(t,bst_newNode(k,f));
 	}
-	
-	
+
 	fclose(fp);
 	return 0;
 }
@@ -55,7 +54,7 @@ int main(){
 		cout<<"hai fallito"<<endl;
 	}
 	
-	
+
 	
 	return 0;
 }
