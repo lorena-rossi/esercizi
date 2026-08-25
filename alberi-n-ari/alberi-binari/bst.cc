@@ -13,7 +13,7 @@ static tipo_key copy_key(tipo_key& s,tipo_key s1){
 }
 
 static tipo_key compare_key(tipo_key s,tipo_key s1){
-		return s-s1;
+	return s-s1;
 }
 
 void print_key(tipo_key k){

@@ -21,6 +21,7 @@ int main(){
 
     while ( fscanf(fp, "%d" "%s" "%f", &k, a.nome, &( a.valore ) ) != EOF )
     {
+        //cout << "DEBUG letto: " << a.nome << endl;
         bst_insert(tree, bst_newNode(k,a) );
     }
 

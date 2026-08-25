@@ -19,14 +19,14 @@ int compare(tipo_inf a, tipo_inf b){
     return -1;
 };
 
-void print_inf(tipo_inf a){
+void print(tipo_inf a){
 
     cout<<" il nome è  : "<<a.nome;
     cout<<" il valore è "<<a.valore<<endl;
 };
 
 /** source viene copiato in dest*/
-void copy_inf(tipo_inf dest , tipo_inf source){
+void copy(tipo_inf& dest , tipo_inf source){
     
     dest.valore = source.valore;
     strcpy(dest.nome, source.nome);
