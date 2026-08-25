@@ -3,8 +3,7 @@
 
 typedef struct tipo_inf
 {
-    int codice;
-    char nome[10];
+    char nome[20];
     float valore;
 };
 

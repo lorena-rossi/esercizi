@@ -1,0 +1,9 @@
+45 Alfa 12.50
+15 Beta 99.99
+79 Gamma 45.00
+10 Delta 3.14
+20 Epsilon 88.20
+55 Zeta 15.00
+90 Eta 7.50
+12 Theta 50.00
+50 Iota 100.00

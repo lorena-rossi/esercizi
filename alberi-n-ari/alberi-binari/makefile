@@ -5,7 +5,7 @@ Alberi-binari: $(OBJ)
 
 main.o: tipo.h bst.h
 
-bst.o: nodo.h bst.h
+bst.o: tipo.h bst.h
 
 tipo.o: tipo.h
 
