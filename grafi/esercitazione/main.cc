@@ -68,6 +68,22 @@ void libera( graph& g){
     delete[] g.dato;
 }
 
+visitaBFSricosiva( graph G, nodo v){ 
+	Creo raggiunto come boolenao di grandezza G.dim (non so come fare non abbiamo fatto i booleani in classe) inizializzato a False;
+	raggiunto[v]= true;
+	enqueue( C , v );
+	While ( C != NULL ){
+		v = dequeue(C);
+		stampo v;
+		while( Adj[v].pun != NULL ){
+			if( ! raggiunto[ Adj[v].valore ] ){
+				enqueue( C, Adj[v].valore);
+				raggiunto[ Adj[v].valore ] = true;
+			}
+			Adj[v] = Adj[v].pun;
+		}
+	}
+}
 
 
 int main(){
