@@ -9,11 +9,6 @@ using namespace std ;
 #include "codabfs.h"
 
 
-
-/*******************************/
-/* DEFINIZIONE MODULO "coda" */
-/*******************************/
-
 codaBFS enqueue(codaBFS c, int i){
 	elemBFS *e=new_elem(i);
 	if(c.tail!=NULL)

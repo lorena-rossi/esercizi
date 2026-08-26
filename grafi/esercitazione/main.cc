@@ -68,19 +68,26 @@ void libera( graph& g){
     delete[] g.dato;
 }
 
-visitaBFSricosiva( graph G, nodo v){ 
-	Creo raggiunto come boolenao di grandezza G.dim (non so come fare non abbiamo fatto i booleani in classe) inizializzato a False;
-	raggiunto[v]= true;
+void visitaBFSricosiva( graph& g, int v){ 
+	//Creo raggiunto come boolenao di grandezza G.dim (non so come fare non abbiamo fatto i booleani in classe) inizializzato a False;
+	int raggiunto[g.dim]= 0;
+    for(int i = 0, i < g.dim , i++){
+        raggiunto[i]=0;
+    }
+    codaBFS C = NULL;
+    raggiunto[v]= 1;
 	enqueue( C , v );
-	While ( C != NULL ){
+	while ( C != NULL ){
 		v = dequeue(C);
-		stampo v;
-		while( Adj[v].pun != NULL ){
-			if( ! raggiunto[ Adj[v].valore ] ){
-				enqueue( C, Adj[v].valore);
-				raggiunto[ Adj[v].valore ] = true;
+		//print(v); 
+        stampas(get_dato(g,v));
+        adj_list p = get_adjlist(g,v); 
+		while( p != NULL ){
+			if( ! raggiunto[ get_adjnode(p) ] ){
+				enqueue( C, get_adjnode( p ));
+				raggiunto[ get_adjnode(p) ] = 1;
 			}
-			Adj[v] = Adj[v].pun;
+			p = get_nextadj(p);
 		}
 	}
 }
