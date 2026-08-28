@@ -1,0 +1,8 @@
+1 0 Marco_Rossi CEO 120000.00
+2 1 Laura_Bianchi Direttore_Tech 85000.00
+3 1 Giuseppe_Verdi Direttore_HR 70000.00
+4 2 Andrea_Neri Team_Lead_Dev 55000.00
+5 2 Marta_Gialli Team_Lead_QA 50000.00
+6 3 Elena_Viola Recruiter 38000.00
+7 4 Stefano_Blu Dev_Senior 45000.00
+8 4 Lucia_Rosa Dev_Junior 30000.00
