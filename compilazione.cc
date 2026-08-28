@@ -5,6 +5,7 @@
 
 using namespace std ;
 
+//ciao 
 #define X
 
 int main()
